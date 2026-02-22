@@ -1,0 +1,12 @@
+{
+    "editor.rulers": [80,120],
+
+    // prevent vscode from messing up the bash terminal
+    "terminal.integrated.suggest.enabled": false,
+    "terminal.integrated.suggest.inlineSuggestion": "off",
+    
+
+    // some things for python development
+    // "python.analysis.stubPath": "",
+    // "python.analysis.extraPaths": []
+}
