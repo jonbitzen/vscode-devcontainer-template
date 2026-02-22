@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
+    echo "Enter the project destination directory for the template .devcontainer and .vscode folders"
+    exit 0
+fi
+
+if [ -z "$1" ]; then
+    echo "Enter the project destination directory for the template .devcontainer and .vscode folders"
+    exit -1
+fi
+
+DEST_DIR=$1
+if [ ! -d "$DEST_DIR" ]; then
+    echo "Destination directory \"${DEST_DIR}\" does not exist"
+    exit -1
+fi
+
+if [ -d "$DEST_DIR/.vscode" ] || [ -d "$DEST_DIR/.devcontainer" ]; then
+    echo "${DEST_DIR}/.vscode and or ${DEST_DIR}/.devcontainer already exist"
+    exit -1
+fi
+
+cp -r .devcontainer/ ${DEST_DIR}/
+cp -r .vscode/ ${DEST_DIR}/
